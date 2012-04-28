@@ -12,6 +12,7 @@ $ rake db:migrate
 $ rails s
 ```
 
+
 ## 画像, CSSはどうすればいい？
 
 一番単純なのは`app/assets/stylesheets/application.css`だけを編集して、画像は`app/assets/images/`に置くことです。
@@ -19,3 +20,8 @@ $ rails s
 例えば、`app/assets/images/hoge.jpg`は`<%=image_path("hoge.jpg")%>`でアクセスできます。
 
 CSSが複雑化してきたら、SCSSで綺麗に整頓していけるといいかもしれません。
+
+
+## ライセンス
+
+see LICENSE
