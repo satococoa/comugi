@@ -1,0 +1,18 @@
+defaults: &defaults
+  secret_token: 35f8de938b71a821676e5d741ad67bceefb0b5229dc8294d9bbdf136e556c1e4b26f6636e09904aebde9ce8191891e008cd3142b9ce959d58372431436638082
+  twitter:
+    key: PIQfo8yCfEjdSFQo6CVLcQ
+    secret: qgmKZpKq4K8M3wAnIyszFRoiLAbKBQTfPpE7xdUFI0o
+
+development:
+  <<: *defaults
+  
+test:
+  <<: *defaults
+  
+production:
+  <<: *defaults
+  secret_token: <%= ENV['SECRET_TOKEN'] %>
+  twitter:
+    key: <%= ENV['TWITTER_KEY'] %>
+    secret: <%= ENV['TWITTER_SECRET'] %>
