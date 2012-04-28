@@ -30,6 +30,15 @@ describe User do
         }
       }
     }
+    describe "戻り値" do
+      subject { User.find_or_create_by_auth_hash(auth_hash) }
+      it { should be_kind_of(User) }
+      its(:uid) { should == auth_hash['uid'] }
+      its(:name) { should == auth_hash['info']['name'] }
+      its(:nickname) { should == auth_hash['info']['nickname'] }
+      its(:image) { should == auth_hash['info']['image'] }
+      its(:token) { should == auth_hash['credentials']['token'] }
+    end
     describe "User.count" do
       subject { User.count }
       context "初めてログインした場合" do

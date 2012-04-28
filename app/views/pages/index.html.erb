@@ -1,0 +1,8 @@
+<h1>Pages#index</h1>
+<% if logged_in? %>
+  <p>Welcome, <%=current_user.name %> さん</p>
+  <%=link_to 'logout', :logout %>
+<% else %>
+  <%=link_to 'login', :login %>
+<% end %>
+<p>Find me in app/views/pages/index.html.erb</p>

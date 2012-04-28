@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
     user.nickname = auth['info']['nickname']
     user.image = auth['info']['image']
     user.token = auth['credentials']['token']
-    user.save
+    if user.save
+      user
+    else
+      nil
+    end
   end
 end
