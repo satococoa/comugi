@@ -19,6 +19,10 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'tapp'
   gem 'sqlite3'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'growl'
 end
 
 group :produciton do
