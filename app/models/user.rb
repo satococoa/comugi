@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   USERS_PER_PAGE = 20
-
   attr_accessible :image, :name, :nickname, :token, :secret, :uid
+
+  has_many :requests
 
   validates :uid, presence: true
   validates :token, presence: true
