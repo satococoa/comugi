@@ -30,9 +30,9 @@ class User < ActiveRecord::Base
     get_relations(:followers, options)
   end
 
-  def twitter_users(ids)
+  def twitter_users(uids)
     configure_twitter
-    users = Twitter.users(ids).index_by(&:id)
+    users = Twitter.users(uids).index_by(&:id)
   end
 
   def tweet(text)

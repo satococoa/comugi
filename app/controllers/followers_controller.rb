@@ -4,6 +4,6 @@ class FollowersController < ApplicationController
   def index
     @page = params[:page].presence || 0
     @users = current_user.followers(page: @page)
-    @request_target_ids = current_user.requests.map {|request| request.target_id}
+    @request_target_uids = current_user.requests.map {|request| request.target_uid}
   end
 end

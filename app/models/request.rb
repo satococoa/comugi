@@ -7,6 +7,7 @@ class Request < ActiveRecord::Base
   validates :user_id, presence: true
   validates :target_uid, presence: true
 
+  before_save :add_user_uid
   after_create :fall_in_love
   after_destroy :destroy_love
 
@@ -25,5 +26,9 @@ class Request < ActiveRecord::Base
 
   def destroy_love
     love.destroy unless love.nil?
+  end
+
+  def add_user_uid
+    self.user_uid = user.uid
   end
 end

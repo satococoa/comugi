@@ -9,7 +9,7 @@ class Love < ActiveRecord::Base
   def tweet
     user = request.user
     target = request.target
-    user.tweet("@#{target.nickname}さんに会いたいです。 #comugi")
-    target.tweet("@#{user.nickname}さんに会いたいです。 #comugi")
+    user.tweet("@#{target.screen_name}さんに会いたいです。 #comugi")
+    User.find_by_uid(target.id).tweet("@#{user.nickname}さんに会いたいです。 #comugi")
   end
 end

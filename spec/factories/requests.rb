@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :request do
     user_id 1
-    target_id 1
+    user_uid 'abc'
+    target_uid 'def'
   end
 end
