@@ -16,6 +16,8 @@
   <% end %>
 </article>
 
-<% if @users.count > User::USERS_PER_PAGE %>
-  <%=link_to "次の#{User::USERS_PER_PAGE}件", {action: :index, page: @page.to_i + 1}%>
-<% end %>
+<div class="pager">
+  <% if @users.count > User::USERS_PER_PAGE %>
+    <%=link_to "次の#{User::USERS_PER_PAGE}件", {action: :index, page: @page.to_i + 1}%>
+  <% end %>
+</div>
