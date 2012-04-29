@@ -1,4 +1,6 @@
 Comugi::Application.routes.draw do
+  get "followers/index"
+
   get "pages/index"
 
   match "login" => redirect("/auth/twitter"), :as => :login
