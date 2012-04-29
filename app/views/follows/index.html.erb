@@ -1,2 +1,7 @@
-<h1>Follows#index</h1>
-<p>Find me in app/views/follows/index.html.erb</p>
+<h1>フォロー一覧</h1>
+<% @users[0, User::USERS_PER_PAGE].each do |user| %>
+  <%=render file: 'shared/_user', locals: {user: user}%>
+<% end %>
+<% if @users.count > User::USERS_PER_PAGE %>
+  <%=link_to "次の#{User::USERS_PER_PAGE}件", {action: :index, page: @page.to_i + 1}%>
+<% end %>
