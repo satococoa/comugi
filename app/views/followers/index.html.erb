@@ -1,3 +1,4 @@
 <h1>Followers#index</h1>
-<p>Find me in app/views/followers/index.html.erb</p>
-<%=debug @users %>
+<% @users.each do |user| %>
+  <%=render file: 'shared/_user', locals: {user: user}%>
+<% end %>
