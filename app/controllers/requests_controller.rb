@@ -17,19 +17,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    puts 'params'
-    params.tapp
-    puts '/params'
-
     @request = current_user.requests.new(target_id: params[:target_id])
-
-    respond_to do |format|
-      if @request.save
-        format.json { render json: @request, status: :created, location: @request }
-      else
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   def destroy
