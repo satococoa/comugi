@@ -1,1 +1,6 @@
-<%=debug user%>
+<div id="users_<%=user.id%>" class="">
+  <p><%=image_tag user.profile_image_url%></p>
+  <p><%=user.name%></p>
+  <p><%=user.screen_name%></p>
+  <p><%=user.description%></p>
+</div>

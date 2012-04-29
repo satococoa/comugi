@@ -1,4 +1,7 @@
-<h1>Followers#index</h1>
-<% @users.each do |user| %>
+<h1>フォロワー一覧</h1>
+<% @users[0, User::USERS_PER_PAGE].each do |user| %>
   <%=render file: 'shared/_user', locals: {user: user}%>
+<% end %>
+<% if @users.count > User::USERS_PER_PAGE %>
+  <%=link_to "次の#{User::USERS_PER_PAGE}件", {action: :index, page: @page.to_i + 1}%>
 <% end %>

@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     ids = result.ids
     options[:page] = 0 if options[:page].nil?
     offset = options[:page].to_i * USERS_PER_PAGE
-    Twitter.users(result.collection[offset, USERS_PER_PAGE])
+    Twitter.users(result.collection[offset, USERS_PER_PAGE+1])
   end
 
   def configure_twitter
