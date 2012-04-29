@@ -5,7 +5,7 @@ gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'settingslogic'
-gem 'eventmachine', :git => 'git://github.com/eventmachine/eventmachine.git'
+gem 'eventmachine', '~> 1.0.0.beta.4'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
