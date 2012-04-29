@@ -1,11 +1,14 @@
+# coding: utf-8
 class SessionsController < ApplicationController
   def create
     user = User.find_or_create_by_auth_hash(auth_hash)
-    # TODO: ログインに成功したときはfollows#indexへ飛ばす
     if user.present?
       session[:user_id] = user.id
+      redirect_to :follows
+    else
+      flash[:alert] = 'ログインに失敗しました'
+      redirect_to :root
     end
-    redirect_to :root
   end
 
   def destroy
