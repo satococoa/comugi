@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+body{
+  margin:0;
+  padding:0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: box;
+}
+
+
+/*ログイン*/
+.loginBackground{
+  height: 416px;
+  margin:0;
+  padding:0;
+  background-image:url(<%=image_path('login_background.jpg')%>);
+  background-size:320px;
+  background-repeat:no-repeat;
+}
+
+.loginButton{
+  margin-top:232px;
+  margin-left:117px;
+  width:86px;
+  height:40px;
+
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #fbd393 4%, #a45a14 50%, #9a4b01 51%, #af6916 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(4%,#fbd393), color-stop(50%,#a45a14), color-stop(51%,#9a4b01), color-stop(100%,#af6916)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 100%); /* IE10+ */
+  background: linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#af6916',GradientType=0 ); /* IE6-9 */
+
+  border-radius:8px;
+  border:solid 1px #8C6415;
+
+  box-shadow:0px 1px 0px #FFF;
+
+}
+
+.loginButton:hover{
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #fbd393 4%, #a45a14 50%, #9a4b01 51%, #af6916 84%, #fcbc74 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(4%,#fbd393), color-stop(50%,#a45a14), color-stop(51%,#9a4b01), color-stop(84%,#af6916), color-stop(100%,#fcbc74)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 84%,#fcbc74 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 84%,#fcbc74 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 84%,#fcbc74 100%); /* IE10+ */
+  background: linear-gradient(top,  #ffffff 0%,#fbd393 4%,#a45a14 50%,#9a4b01 51%,#af6916 84%,#fcbc74 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fcbc74',GradientType=0 ); /* IE6-9 */
+}
+
+.loginButton:active{
+  background: #774311; /* Old browsers */
+  background: -moz-linear-gradient(top,  #774311 0%, #af6916 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#774311), color-stop(100%,#af6916)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #774311 0%,#af6916 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #774311 0%,#af6916 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #774311 0%,#af6916 100%); /* IE10+ */
+  background: linear-gradient(top,  #774311 0%,#af6916 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#774311', endColorstr='#af6916',GradientType=0 ); /* IE6-9 */
+
+  box-shadow:0px 0px 0px #FFF;
+}
+
+.loginLabel{
+  color:#FFF;
+  font-weight:bold;
+  text-shadow:0px -1px 0px  #000000;
+}
+
+.loginLavel:active{
+  color:#FFFFFF25;
+  text-shadow:0px 0px 0px  #000000;
+}
+
+
+/*会いたい人一覧*/
+
+/*フォロー*/
+
+/*フォロワー*/
+
