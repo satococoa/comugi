@@ -1,10 +1,4 @@
 Comugi::Application.routes.draw do
-  get "requests/index"
-
-  get "requests/create"
-
-  get "requests/destroy"
-
   get "pages/index"
 
   match "login" => redirect("/auth/twitter"), :as => :login
@@ -13,6 +7,7 @@ Comugi::Application.routes.draw do
 
   resources :followers, :only => [:index]
   resources :follows, :only => [:index]
+  resources :requests, :only => [:index, :create, :destroy]
 
   root :to => 'pages#index'
 end

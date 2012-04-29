@@ -30,6 +30,11 @@ class User < ActiveRecord::Base
     get_relations(:followers, options)
   end
 
+  def twitter_users(ids)
+    configure_twitter
+    users = Twitter.users(ids).index_by(&:id)
+  end
+
   private
   # returns instance of Twitter::User
   def get_relations(type, options)

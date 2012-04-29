@@ -1,2 +1,5 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
+<h1>会いたい一覧</h1>
+<% @requests.each do |request| %>
+  <%=render file: 'shared/_user', locals: {user: request.target(users: @users)}%>
+  <%=link_to '解除', request, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>

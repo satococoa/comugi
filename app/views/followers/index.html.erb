@@ -1,6 +1,11 @@
 <h1>フォロワー一覧</h1>
 <% @users[0, User::USERS_PER_PAGE].each do |user| %>
   <%=render file: 'shared/_user', locals: {user: user}%>
+  <% if @request_target_ids.include?(user.id) %>
+    登録済み
+  <% else %>
+    <%=link_to '登録', requests_path(target_id: user.id), {method: :post, remote: true} %>
+  <% end %>
 <% end %>
 <% if @users.count > User::USERS_PER_PAGE %>
   <%=link_to "次の#{User::USERS_PER_PAGE}件", {action: :index, page: @page.to_i + 1}%>
