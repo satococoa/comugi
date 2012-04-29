@@ -6,6 +6,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'settingslogic'
 gem 'unicorn'
+gem 'twitter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
