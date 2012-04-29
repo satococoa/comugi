@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  USERS_PER_PAGE = 20
+
   attr_accessible :image, :name, :nickname, :token, :secret, :uid
 
   validates :uid, presence: true
@@ -16,6 +18,40 @@ class User < ActiveRecord::Base
       user
     else
       nil
+    end
+  end
+
+  def follows(options = {})
+    get_relations(:follows, options)
+  end
+
+  def followers(options = {})
+    get_relations(:followers, options)
+  end
+
+  private
+  # returns instance of Twitter::User
+  def get_relations(type, options)
+    configure_twitter
+    result = case type
+             when :follows
+               Twitter.friend_ids(options)
+             when :followers
+               Twitter.follower_ids(options)
+             end
+    # next_cursor = result.next_cursor
+    ids = result.ids
+    options[:page] = 0 if options[:page].nil?
+    offset = options[:page].to_i * USERS_PER_PAGE
+    Twitter.users(result.collection[offset, USERS_PER_PAGE])
+  end
+
+  def configure_twitter
+    Twitter.configure do |config|
+      config.consumer_key = Settings.twitter.key
+      config.consumer_secret = Settings.twitter.secret
+      config.oauth_token = token
+      config.oauth_token_secret = secret
     end
   end
 end
