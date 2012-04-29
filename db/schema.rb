@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120429063704) do
+ActiveRecord::Schema.define(:version => 20120429072626) do
 
   create_table "loves", :force => true do |t|
     t.integer  "request_id"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(:version => 20120429063704) do
 
   create_table "requests", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "target_id"
+    t.integer  "target_uid"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "user_uid"
   end
 
   create_table "users", :force => true do |t|

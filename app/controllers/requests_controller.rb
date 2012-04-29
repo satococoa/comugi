@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
   def index
     @requests = current_user.requests.all
     unless @requests.empty?
-      user_ids = @requests.map {|request| request.target_id}
+      user_ids = @requests.map {|request| request.target_uid}
       @users = current_user.twitter_users(user_ids)
     else
       @users = []
@@ -17,7 +17,8 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = current_user.requests.create(target_id: params[:target_id])
+    @request = current_user.requests.create(
+      target_uid: params[:target_uid], user_uid: current_user.uid)
   end
 
   def destroy
