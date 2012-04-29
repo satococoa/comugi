@@ -1,6 +1,8 @@
 <div id="users_<%=user.id%>" class="">
-  <p><%=image_tag user.profile_image_url%></p>
-  <p><%=user.name%></p>
-  <p><%=user.screen_name%></p>
-  <p><%=user.description%></p>
+  <%=image_tag user.profile_image_url%>
+  <div class="panel_accinfo">
+    <span class="twit_name"><%=user.name%></span>
+    <a href="http://twitter.com/<%=user.screen_name%>"><span><%=user.screen_name%></span></a>
+  </div>
 </div>
+

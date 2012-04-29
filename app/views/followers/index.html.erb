@@ -1,14 +1,21 @@
-<h1>フォロワー一覧</h1>
-<% @users[0, User::USERS_PER_PAGE].each do |user| %>
-  <%=render file: 'shared/_user', locals: {user: user}%>
-  <div class="create_request_button" id="create_request_button_<%=user.id%>">
-    <% if @request_target_uids.include?(user.id) %>
-      登録済み
-    <% else %>
-      <%=link_to '登録', requests_path(target_uid: user.id), {method: :post, remote: true} %>
-    <% end %>
-  </div>
-<% end %>
+<article class="contents">
+  <!--フォロワーや会いたい人情報パネルここから-->
+  <% @users[0, User::USERS_PER_PAGE].each do |user| %>
+    <div class="panel">
+      <%=render file: 'shared/_user', locals: {user: user}%>
+      <!--「解除」はclass="regectbutton"-->
+      <button type="submit" class="addlistbutton create_request_button" id="create_request_button_<%=user.id%>">
+        <% if @request_target_uids.include?(user.id) %>
+          登録済み
+        <% else %>
+          <%=link_to '登録', requests_path(target_uid: user.id), {class: 'loginLabel', method: :post, remote: true} %>
+        <% end %>
+      </button>
+      <a href="https://www.google.co.jp/"/></a>
+    </div>
+  <% end %>
+</article>
+
 <% if @users.count > User::USERS_PER_PAGE %>
   <%=link_to "次の#{User::USERS_PER_PAGE}件", {action: :index, page: @page.to_i + 1}%>
 <% end %>
