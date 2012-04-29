@@ -5,7 +5,6 @@ gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'settingslogic'
-gem 'unicorn'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -19,12 +18,15 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'tapp'
   gem 'sqlite3'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'rb-fsevent'
-  gem 'growl'
+  if RUBY_PLATFORM.downcase.include?('darwin')
+    gem 'guard'
+    gem 'guard-rspec'
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
 end
 
 group :produciton do
   gem 'pg'
+  gem 'thin'
 end
