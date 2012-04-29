@@ -26,7 +26,8 @@ describe User do
           'image' => 'http://example.com/sample.jpg'
         },
         'credentials' => {
-          'token' => 'access_token'
+          'token' => 'access_token',
+          'secret' => 'access_secret'
         }
       }
     }
@@ -38,6 +39,7 @@ describe User do
       its(:nickname) { should == auth_hash['info']['nickname'] }
       its(:image) { should == auth_hash['info']['image'] }
       its(:token) { should == auth_hash['credentials']['token'] }
+      its(:secret) { should == auth_hash['credentials']['secret'] }
     end
     describe "User.count" do
       subject { User.count }

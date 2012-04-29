@@ -7,5 +7,6 @@ FactoryGirl.define do
     nickname "MyString"
     image "MyString"
     token "MyString"
+    secret "MyString"
   end
 end
