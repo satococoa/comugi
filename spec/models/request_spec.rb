@@ -3,6 +3,9 @@ require 'spec_helper'
 
 describe Request do
   describe "#loves" do
+    before do
+      Love.any_instance.stub(:tweet) { true }
+    end
     let(:myself) { FactoryGirl.create :user, uid: 2 }
     let(:user) { FactoryGirl.create :user, uid: 1 }
     context "自分を会いたい登録している人がいない場合" do

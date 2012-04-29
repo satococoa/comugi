@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
     users = Twitter.users(ids).index_by(&:id)
   end
 
+  def tweet(text)
+    configure_twitter
+    Twitter.update text
+  end
+
   private
   # returns instance of Twitter::User
   def get_relations(type, options)
