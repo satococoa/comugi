@@ -17,7 +17,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = current_user.requests.new(target_id: params[:target_id])
+    @request = current_user.requests.create(target_id: params[:target_id])
   end
 
   def destroy
